@@ -47,8 +47,12 @@ public class Matriz extends javax.swing.JDialog {
     }
 
     public void Retirarprimo() {
-        ma.eliminarprimo();
-        subirtablas();
+        if (ma.getGeneral() == null) {
+            JOptionPane.showMessageDialog(null, "Genere la matriz primero", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            ma.eliminarprimo();
+            subirtablas();
+        }
     }
 
     public void Filascolumna() {
